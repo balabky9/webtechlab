@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Bookstore</title>
+<div><center><span style="text-align:center; font-size:25px;">Online Book Store</span></center></div>
+<hr/>
+<nav>
+	<center>
+		<a href="home.html">Home</a>
+		<a href="signup.html">Login</a>
+		<a href="payment.html">Pay</a>
+		<a href="cart.html">Pay</a>
+		<a href="profile.html">My profile</a>
+	</center>
+</nav>
+
+</head>
+<body bgcolor="#e6e6e6">
+<div class="container" style="margin-left:15%; margin-right:15%;">
+<marquee> Offer!! Offer!! Sale!! Sale!!</marquee>
+<center><h3>Login </h3><center>
+<fieldset>
+<form id="loginform" action="#">
+<label>Username/Email: </label>
+<input id="uname" type="text"></input>
+<label>Password: </label>
+<input id="pwd" type="password"></input>
+<input id="login" type="button" value="submit"></input>
+</form>
+</fieldset>
+</div>
+</body>
+<script>
+document.getElementById("login").addEventListener("click",function(event){
+event.preventDefault(); 
+var uname = document.getElementById("uname");
+var pwd = document.getElementById("pwd"); 
+var flag = 0; 
+if(uname.value=="") flag=1; 
+if(pwd.value=="") flag=2;
+var pat = new RegExp("([^.$%\\/])+@[a-z]+\.[a-z]+");
+if(!pat.test(uname.value)) flag =3;
+if(flag==0) window.alert("Form valid"); 
+else{
+window.alert("Form invalid"); 
+document.getElementById("loginform").focus();
+}
+});
+</script>
+</html>
